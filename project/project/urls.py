@@ -20,7 +20,7 @@ import blog.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #read
-    path('', blog.views.home, name = "home"),
+    path('', blog.views.index, name = "index"),
     path('blog/<int:id>',blog.views.detail,name="detail"),
     #create
     path('new',blog.views.new,name = 'new'),

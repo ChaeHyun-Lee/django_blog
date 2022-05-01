@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blog
 
 # Create your views here.
-def home(request):
+def index(request):
     blogs = Blog.objects.all()
-    return render(request,'home.html',{'blogs':blogs})
+    return render(request,'index.html',{'blogs':blogs})
 
 def detail(request,id):
     blog = get_object_or_404(Blog,pk = id)
@@ -34,4 +34,4 @@ def update(request,id):
 def delete(request,id):
     delete_blog  = get_object_or_404(Blog,pk = id) 
     delete_blog.delete() 
-    return redirect('home')
+    return redirect('index')
