@@ -1,0 +1,43 @@
+<h1>글 수정하기</h1>
+<form action="{% url 'update' blog.id %}" method="POST">
+  {% csrf_token %}
+  <div id="whole_edit">
+   <div id="title_edit"><div><제목></div><input type="text" name="title" value="{{blog.title}}" /></div>
+   <div id="body_edit"><div><본문></div><textarea name="contents" id="" cols="30" rows="10">{{blog.contents}}</textarea></div>
+  </div>
+  <div id="edit_button"><input type="submit" value="작성하기" /></div>
+</form>
+
+<style>
+  h1{
+        font-size: 45px;
+        text-align: center;
+        margin-top: 70px;
+        color: #417D7A;
+    }
+    
+    #whole_edit{
+        text-align: center;
+    }
+
+    body{
+        background-color: #EDE6DB;;
+    }
+
+    #title_edit{
+        color: #417D7A;
+        font-size: 20px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    #body_edit{
+        color: #417D7A;
+        font-size: 20px;
+    }
+
+    #edit_button{
+        text-align: center;
+        margin-top: 40px;
+    }
+</style>

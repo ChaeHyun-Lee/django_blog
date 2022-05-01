@@ -1,0 +1,40 @@
+<h1>LikeLion 10th Blog Project</h1>
+<br />
+<div id="write"><a href="{% url 'new'%}"><새 글 작성하기></a></div>
+{% for blog in blogs %}
+<div id="history">
+    <a href="{%url 'detail' blog.id %}">
+    <h5>{{blog.title}}</h5>
+    {{blog.created_at}}
+    <p>{{blog.summary}}</p>
+    </a>
+</div>
+<br />
+{% endfor %}
+
+<style>
+    h1{
+        font-size: 55px;
+        text-align: center;
+        margin-top: 70px;
+        color: #EDE6DB;
+    }
+    #write{
+        text-align: center;
+        font-size: 30px;
+    }
+    a{
+        text-decoration: none;
+        color: #EDE6DB;
+    }
+    body{
+        background-color: #417D7A;
+    }
+
+    #history{
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+</style>

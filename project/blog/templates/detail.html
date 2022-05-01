@@ -1,0 +1,54 @@
+<h1>{{blog.title}}</h1> 
+<div id="time">{{blog.created_at}}</div>
+<br />
+<p>{{blog.contents}}</p>
+<div id="all_buttons">
+    <a href="{% url 'home' %}"><홈으로></a>
+    <a href="{% url 'edit' blog.id %}"><글 수정하기></a>
+    <a href="{% url 'delete' blog.id %}"><글 삭제하기></a>
+</div>
+
+<style>
+    h1{
+        font-size: 45px;
+        text-align: center;
+        margin-top: 70px;
+        color: #417D7A;
+    }
+
+    #time{
+        text-align: center;
+        color: #417D7A;
+        font-size: 20px;
+        margin-top: 50px;
+        font-weight: 500;
+    }
+
+    p{
+        text-align: center;
+        color: #417D7A;
+        font-size: 20px;
+        margin-bottom: 40px;
+        font-weight: 500;
+    }
+
+    body{
+        background-color: #EDE6DB;
+    }
+
+    #all_buttons{
+        text-align: center;
+        color: #417D7A;
+        font-size: 20px;
+        margin: 10px;
+        font-weight: 500;
+    }
+
+   a{
+       text-decoration: none;
+       color: #417D7A;
+       margin-left: 10px;
+   }
+
+
+</style>
