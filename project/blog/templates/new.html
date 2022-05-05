@@ -1,10 +1,14 @@
+{% extends 'base.html' %} {% block contents %}
 <h1>새 글 작성하기</h1>
-<form action="{% url 'create'%}" method="POST">
+<form action="{% url 'create'%}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   <div id="whole">
       <div id="title"><div><제목></div><input type="text" name="title" /></div>
       <div id="body"><div><본문></div><textarea name="contents" id="" cols="30" rows="10"></textarea></div>
+      <div><사진></div><input type="file" name="image" />
     </div>
+    <br />
+    <br />
   <div id="write_button"><input type="submit" value="작성하기" /></div>
 </form>
 
@@ -42,3 +46,5 @@
     }
     
 </style>
+
+{% endblock %}

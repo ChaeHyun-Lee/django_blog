@@ -17,6 +17,7 @@ def create(request):
     new_blog = Blog() 
     new_blog.title =  request.POST['title']  
     new_blog.contents = request.POST['contents']
+    new_blog.image = request.FILES['image']
     new_blog.save() 
     return redirect('detail',new_blog.id) 
 
@@ -28,6 +29,7 @@ def update(request,id):
     update_blog = get_object_or_404(Blog,pk=id)
     update_blog.title = request.POST['title'] 
     update_blog.contents = request.POST['contents']
+    update_blog.image = request.FILES['image']
     update_blog.save()
     return redirect('detail',update_blog.id)
 

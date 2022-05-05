@@ -1,4 +1,8 @@
+{% extends 'base.html' %} {% load static %} {% block contents %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 <h1>LikeLion 10th Blog Project</h1>
+<img src="{% static 'imoticon.jpg' %}" class="logo"/>
+
 <br />
 <div id="write"><a href="{% url 'new'%}"><새 글 작성하기></a></div>
 {% for blog in blogs %}
@@ -38,3 +42,5 @@
     }
 
 </style>
+
+{% endblock %}

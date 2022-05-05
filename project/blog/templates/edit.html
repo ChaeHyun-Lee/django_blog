@@ -1,10 +1,14 @@
+{% extends 'base.html' %} {% block contents %}
 <h1>글 수정하기</h1>
-<form action="{% url 'update' blog.id %}" method="POST">
+<form action="{% url 'update' blog.id %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   <div id="whole_edit">
    <div id="title_edit"><div><제목></div><input type="text" name="title" value="{{blog.title}}" /></div>
    <div id="body_edit"><div><본문></div><textarea name="contents" id="" cols="30" rows="10">{{blog.contents}}</textarea></div>
+   <div><사진></div><input type="file" name="image" />
   </div>
+  <br />
+  <br />
   <div id="edit_button"><input type="submit" value="작성하기" /></div>
 </form>
 
@@ -41,3 +45,5 @@
         margin-top: 40px;
     }
 </style>
+
+{% endblock %}
